@@ -1,0 +1,108 @@
+/**
+Rundiz Calendar css
+
+@since Version 2.0
+@author Vee W.
+*/
+
+
+.rundiz-calendar-columns-year .rundiz-calendar-scope-month .date-cell {
+	position: relative;
+}
+.rundiz-calendar-columns-year .rundiz-calendar-scope-month .date-cell .events {
+	background-color: #fff;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+	display: none;
+	padding: 5px;
+	position: absolute;
+	z-index: 5;
+}
+.rundiz-calendar-columns-year .rundiz-calendar-scope-month .date-cell.have-events {
+	background-color: rgba(221,239,255,0.7);
+}
+.rundiz-calendar-columns-year .rundiz-calendar-scope-month .date-cell:hover .events.have-events {
+	display: block;
+}
+.rundiz-calendar-columns-year .rundiz-calendar-scope-month .date-cell.is-today {
+	border: 2px solid #aaa;
+	outline: none;
+}
+.rundiz-calendar-columns-year .rundiz-calendar-scope-month .dates-row td {
+	height: 50px;
+}
+@media (min-width: 768px) {
+	.rundiz-calendar-columns-year .column-1-month {
+		float: left;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	.rundiz-calendar-columns-year .column-1-month:nth-of-type(odd) {
+		clear: left;
+	}
+	.rundiz-calendar-columns-year .column-1-month:nth-of-type(even) {
+		clear: right;
+	}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+	.rundiz-calendar-columns-year .column-1-month:nth-of-type(odd) {
+		clear: left;
+	}
+	.rundiz-calendar-columns-year .column-1-month:nth-of-type(even) {
+		clear: right;
+	}
+}
+@media (min-width: 1200px) {
+	.rundiz-calendar-columns-year .column-1-month:nth-child(3n+1) {
+		clear: left;
+	}
+	.rundiz-calendar-columns-year .column-1-month:nth-child(3n) {
+		clear: right;
+	}
+}
+
+
+.rundiz-calendar-scope-day .time.is-current-hour {
+	border-left: 2px solid #ff6666;
+}
+.rundiz-calendar-scope-day.is-today {
+	background: #f5f5f5;
+}
+.rundiz-calendar-scope-day .time {
+	text-align: center;
+	vertical-align: top;
+	width: 50px;
+}
+
+
+.rundiz-calendar-scope-month .date-cell.is-today {
+	background-color: #f5f5f5;
+	outline: 1px solid #aaa;
+}
+.rundiz-calendar-scope-month .dates-row .date-after-month,
+.rundiz-calendar-scope-month .dates-row .date-before-month {
+	opacity: 0.3;
+}
+.rundiz-calendar-scope-month .month-navigation-table {
+	width: 100%;
+}
+.rundiz-calendar-scope-month .month-navigation-table td {
+	text-align: center;
+}
+.rundiz-calendar-scope-month .month-navigation-table .next-month,
+.rundiz-calendar-scope-month .month-navigation-table .next-year,
+.rundiz-calendar-scope-month .month-navigation-table .previous-month,
+.rundiz-calendar-scope-month .month-navigation-table .previous-year {
+	width: 30px;
+}
+.rundiz-calendar-scope-month > tbody td {
+	width: 14.28%;
+}
+.rundiz-calendar-scope-month .dates-row td {
+	height: 100px;
+}
+.rundiz-calendar-scope-month > tbody td .events {
+	overflow: hidden;
+}
+.rundiz-calendar-scope-month > tbody td:hover .events {
+	overflow: visible;
+}

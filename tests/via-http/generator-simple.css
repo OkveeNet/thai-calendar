@@ -1,0 +1,263 @@
+/**
+Rundiz Calendar css
+
+@since Version 2.0
+@author Vee W.
+*/
+
+
+.rundiz-calendar-columns-week {
+	display: table;
+	width: 100%;
+}
+.rundiz-calendar-columns-week .column-1-day {
+	display: table-cell;
+	width: 14.28%;
+}
+.rundiz-calendar-columns-week .column-1-day > h3 {
+	font-size: 1.5rem;
+	text-align: center;
+}
+.rundiz-calendar-columns-week .rundiz-calendar-scope-day .event-column .events .event {
+	max-width: 45px;
+	overflow: hidden;
+	padding: 4px 5px 3px;
+	text-overflow: ellipsis;
+}
+.rundiz-calendar-columns-week .rundiz-calendar-scope-day .event-column .events .event:hover {
+	max-width: none;
+	overflow: visible;
+	position: absolute;
+	z-index: 5;
+}
+
+
+.rundiz-calendar-columns-year:after {
+	clear: both;
+	content: '';
+	display: table;
+}
+.rundiz-calendar-columns-year .column-1-month {
+	margin-bottom: 20px;
+}
+.rundiz-calendar-columns-year .rundiz-calendar-scope-month .date-cell {
+	position: relative;
+}
+.rundiz-calendar-columns-year .rundiz-calendar-scope-month .date-cell .events {
+	background-color: #fff;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+	display: none;
+	padding: 5px;
+	position: absolute;
+	width: 200px;
+	z-index: 5;
+}
+.rundiz-calendar-columns-year .rundiz-calendar-scope-month .date-cell.have-events {
+	background-color: rgba(221,239,255,0.7);
+}
+.rundiz-calendar-columns-year .rundiz-calendar-scope-month .date-cell:hover .events.have-events {
+	display: block;
+}
+.rundiz-calendar-columns-year .rundiz-calendar-scope-month .date-cell.is-today {
+	border: 2px solid #aaa;
+	outline: none;
+}
+.rundiz-calendar-columns-year .rundiz-calendar-scope-month .dates-row td {
+	height: 50px;
+}
+@media (min-width: 768px) {
+	.rundiz-calendar-columns-year .column-1-month {
+		float: left;
+		margin-right: 20px;
+	}
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+	.rundiz-calendar-columns-year .column-1-month {
+		width: 285px;
+	}
+	.rundiz-calendar-columns-year .column-1-month:nth-of-type(odd) {
+		clear: left;
+	}
+	.rundiz-calendar-columns-year .column-1-month:nth-of-type(even) {
+		clear: right;
+		margin-right: 0;
+	}
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+	.rundiz-calendar-columns-year .column-1-month {
+		width: 401px;
+	}
+	.rundiz-calendar-columns-year .column-1-month:nth-of-type(odd) {
+		clear: left;
+	}
+	.rundiz-calendar-columns-year .column-1-month:nth-of-type(even) {
+		clear: right;
+		margin-right: 0;
+	}
+}
+@media (min-width: 1280px) and (max-width: 1599px) {
+	.rundiz-calendar-columns-year .column-1-month {
+		width: 332px;
+	}
+	.rundiz-calendar-columns-year .column-1-month:nth-child(3n+1) {
+		clear: left;
+	}
+	.rundiz-calendar-columns-year .column-1-month:nth-child(3n) {
+		clear: right;
+		margin-right: 0;
+	}
+}
+@media (min-width: 1600px) and (max-width: 1919px) {
+	.rundiz-calendar-columns-year .column-1-month {
+		width: 421px;
+	}
+	.rundiz-calendar-columns-year .column-1-month:nth-child(3n+1) {
+		clear: left;
+	}
+	.rundiz-calendar-columns-year .column-1-month:nth-child(3n) {
+		clear: right;
+		margin-right: 0;
+	}
+}
+@media (min-width: 1920px) {
+	.rundiz-calendar-columns-year .column-1-month {
+		width: 505px;
+	}
+	.rundiz-calendar-columns-year .column-1-month:nth-child(3n+1) {
+		clear: left;
+	}
+	.rundiz-calendar-columns-year .column-1-month:nth-child(3n) {
+		clear: right;
+		margin-right: 0;
+	}
+}
+
+
+.rundiz-calendar-scope-day {
+	border: 1px solid #ddd;
+	border-collapse: collapse;
+	width: 100%;
+}
+.rundiz-calendar-scope-day.is-today {
+	background: #f5f5f5;
+}
+.rundiz-calendar-scope-day td,
+.rundiz-calendar-scope-day th {
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	height: 26px;
+	max-height: 26px;
+	padding: 5px;
+}
+.rundiz-calendar-scope-day .time {
+	text-align: center;
+	vertical-align: top;
+	width: 50px;
+}
+.rundiz-calendar-scope-day .time.is-current-hour {
+	border-left: 2px solid #ff6666;
+}
+.rundiz-calendar-scope-day .event-column {
+	padding: 0;
+	vertical-align: top;
+}
+.rundiz-calendar-scope-day .event-column.time-half {
+	border-top: 1px dotted #ddd;
+}
+.rundiz-calendar-scope-day .event-column .events {
+	font-size: 0;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	white-space: nowrap;
+}
+.rundiz-calendar-scope-day .event-column .events .event {
+	background-color: #ddefff;
+	border: 1px solid #7bbff9;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 11px;
+	margin: 0 0 0 5px;
+	padding: 4px 10px 3px;
+}
+.rundiz-calendar-scope-day .event-column .events .event.event-special {
+	background-color: #daffd9;
+	border: 1px solid #6cbc61;
+}
+
+
+.rundiz-calendar-scope-month {
+	border: 1px solid #ddd;
+}
+.rundiz-calendar-scope-month,
+.rundiz-calendar-scope-month .month-navigation-table {
+	border-collapse: collapse;
+	width: 100%;
+}
+.rundiz-calendar-scope-month > tbody td {
+	border: 1px solid #ddd;
+	padding: 5px;
+	vertical-align: top;
+	width: 14.28%;
+}
+.rundiz-calendar-scope-month .dates-row td {
+	height: 100px;
+}
+.rundiz-calendar-scope-month .dates-row .date-after-month,
+.rundiz-calendar-scope-month .dates-row .date-before-month {
+	opacity: 0.3;
+}
+.rundiz-calendar-scope-month .date-cell.is-today {
+	background-color: #f5f5f5;
+	outline: 1px solid #aaa;
+}
+.rundiz-calendar-scope-month .date-cell .events .event {
+	cursor: pointer;
+	display: block;
+	font-size: 11px;
+}
+.rundiz-calendar-scope-month .date-cell .events .event.event-special {
+	background-color: #daffd9;
+	border: 1px solid #6cbc61;
+}
+.rundiz-calendar-scope-month .date-cell .events .event:before {
+	content: '• ';
+}
+.rundiz-calendar-scope-month .date-cell .events .event:hover {
+	color: #4496dc;
+}
+.rundiz-calendar-scope-month .days-row td {
+	background-color: #eaeaea;
+}
+.rundiz-calendar-scope-month .month-navigation-table {
+	background-color: #e2e2e2;
+	font-size: 16px;
+}
+.rundiz-calendar-scope-month .month-navigation-table td {
+	border-right: 1px solid #ddd;
+	text-align: center;
+}
+.rundiz-calendar-scope-month .month-navigation-table td:last-child {
+	border-right: none;
+}
+.rundiz-calendar-scope-month .month-navigation-table td a {
+	color: #555;
+	display: block;
+	text-decoration: none;
+}
+.rundiz-calendar-scope-month .month-navigation-table .next-month,
+.rundiz-calendar-scope-month .month-navigation-table .next-year,
+.rundiz-calendar-scope-month .month-navigation-table .previous-month,
+.rundiz-calendar-scope-month .month-navigation-table .previous-year {
+	width: 30px;
+}
+
+
+.rundiz-date-navigation a {
+	background-color: #f1f1f1;
+	border: 1px solid #eee;
+	display: inline-block;
+	padding: 5px 10px;
+	text-decoration: none;
+}
