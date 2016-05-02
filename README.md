@@ -43,7 +43,7 @@ $Calendar = new \Rundiz\Calendar\Calendar();
 $Calendar->base_url = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
 $Calendar->viewing_date = (isset($_GET['viewdate']) ? strip_tags($_GET['viewdate']) : date('Y-m-d'));
 // We already have 2 generators for you to use. 1 is Simple and 2 is Bootstrap3. Use its class name in second argument of display() method.
-echo $Calendar->display('day', '\\Rundiz\\Calendar\\Generators\\Bootstrap3');
+echo $Calendar->display('year', '\\Rundiz\\Calendar\\Generators\\Bootstrap3');
 $Calendar->clear();
 ```
 
@@ -107,3 +107,27 @@ $Calendar->setEvents($events);
 echo $Calendar->display('month');
 $Calendar->clear();
 ```
+
+## Customize
+### Change locale
+You can change the language to use other language (or locale). To do this call to the 'locale' property of Calendar class.
+```php
+$Calendar->locale = array('en_UK.utf8', 'en_UK', 'en');
+```
+For more information about locale, please take a look at [http://php.net/manual/en/function.setlocale.php][1]
+
+### First day of week
+You can use other day as first day of week instead of Sunday. Set 'first_day_of_week' property to the day number (0 = Sunday, 1 = Monday, 2 = Tuesday, ..., 6 = Saturday)
+```php
+$Calendar->first_day_of_week = 3;// Wednesday as firstday of week.
+```
+
+### Buddhist era (ปีพุทธศักราช)
+You can set to use or not to use Buddhist era (BE). You can also change the difference year of Buddhist era and anno Domini (AD). By default we use 543.
+```php
+$Calendar->use_buddhist_era = true;// Set to false for not to use Buddhist era.
+$Calendar->buddhist_era_offset = 543;
+$Calendar->buddhist_era_offset_short = 43;// 2016 = 2559, 16 = 59.
+```
+
+[1]: http://php.net/manual/en/function.setlocale.php
