@@ -72,7 +72,7 @@ class Bootstrap3 extends GeneratorAbstractClass
             unset($date);
             $output .= '  </div>'."\n";
             $output .= '</div>'."\n";
-            $output .= '<h3>'.sprintf(static::__('Date: %s'), $this->calendar_data['viewing_date']['day_full'].' '.intval($this->calendar_data['viewing_date']['date']).' '.$this->calendar_data['viewing_date']['month_name_full'].' '.$this->calendar_data['viewing_date']['year_buddhist_era_full']).'</h3>'."\n";
+            $output .= '<h3>'.sprintf(static::__('Date: %s'), $this->calendar_data['viewing_date']['day_full'].' '.intval($this->calendar_data['viewing_date']['date']).' '.$this->calendar_data['viewing_date']['month_name_full'].' '.($this->use_buddhist_era === true ? $this->calendar_data['viewing_date']['year_buddhist_era_full'] : $this->calendar_data['viewing_date']['year_full'])).'</h3>'."\n";
         }
 
         if (array_key_exists('calendar', $this->calendar_data) && is_array($this->calendar_data['calendar']) && array_key_exists('times', $this->calendar_data['calendar']) && is_array($this->calendar_data['calendar']['times'])) {
@@ -160,7 +160,7 @@ class Bootstrap3 extends GeneratorAbstractClass
             unset($date);
             $output .= '  </div>'."\n";
             $output .= '</div>'."\n";
-            $output .= '<h3>'.sprintf(static::__('Month: %s'), $this->calendar_data['viewing_date']['month_name_full'].' '.$this->calendar_data['viewing_date']['year_buddhist_era_full']).'</h3>'."\n";
+            $output .= '<h3>'.sprintf(static::__('Month: %s'), $this->calendar_data['viewing_date']['month_name_full'].' '.($this->use_buddhist_era === true ? $this->calendar_data['viewing_date']['year_buddhist_era_full'] : $this->calendar_data['viewing_date']['year_full'])).'</h3>'."\n";
         }
 
         if (array_key_exists('calendar', $this->calendar_data) && is_array($this->calendar_data['calendar'])) {
@@ -179,7 +179,7 @@ class Bootstrap3 extends GeneratorAbstractClass
                 $output .= '            <tr>'."\n";
                 $output .= '              <td class="previous-year"><a href="'.$base_url.'viewdate='.$this->calendar_data['calendar']['year_navigation']['previous'].'-'.$this->calendar_data['calendar']['month_navigation']['current_month_number'].'">&laquo;</a>'.'</td>'."\n";
                 $output .= '              <td class="previous-month"><a href="'.$base_url.'viewdate='.$this->calendar_data['calendar']['month_navigation']['previous'].'">&lsaquo;</a>'.'</td>'."\n";
-                $output .= '              <td class="current-month month-name">'.$this->calendar_data['calendar']['month_navigation']['current_month_name_full'].' '.$this->calendar_data['calendar']['month_navigation']['current_month_year_buddhist_era_full'].'</td>'."\n";
+                $output .= '              <td class="current-month month-name">'.$this->calendar_data['calendar']['month_navigation']['current_month_name_full'].' '.($this->use_buddhist_era === true ? $this->calendar_data['calendar']['month_navigation']['current_month_year_buddhist_era_full'] : $this->calendar_data['calendar']['month_navigation']['current_month_year_full']).'</td>'."\n";
                 $output .= '              <td class="next-month"><a href="'.$base_url.'viewdate='.$this->calendar_data['calendar']['month_navigation']['next'].'">&rsaquo;</a>'.'</td>'."\n";
                 $output .= '              <td class="next-year"><a href="'.$base_url.'viewdate='.$this->calendar_data['calendar']['year_navigation']['next'].'-'.$this->calendar_data['calendar']['month_navigation']['current_month_number'].'">&raquo;</a>'.'</td>'."\n";
                 $output .= '            </tr>'."\n";
@@ -429,7 +429,7 @@ class Bootstrap3 extends GeneratorAbstractClass
             unset($date);
             $output .= '  </div>'."\n";
             $output .= '</div>'."\n";
-            $output .= '<h3>'.sprintf(static::__('Year: %s'), $this->calendar_data['viewing_date']['year_buddhist_era_full']).'</h3>'."\n";
+            $output .= '<h3>'.sprintf(static::__('Year: %s'), ($this->use_buddhist_era === true ? $this->calendar_data['viewing_date']['year_buddhist_era_full'] : $this->calendar_data['viewing_date']['year_full'])).'</h3>'."\n";
         }
 
         if (array_key_exists('calendar', $this->calendar_data) && is_array($this->calendar_data['calendar']) && array_key_exists('months', $this->calendar_data['calendar']) && is_array($this->calendar_data['calendar']['months'])) {
@@ -450,7 +450,7 @@ class Bootstrap3 extends GeneratorAbstractClass
                     $output .= '        <table class="month-navigation-table">'."\n";
                     $output .= '          <tbody>'."\n";
                     $output .= '            <tr>'."\n";
-                    $output .= '              <td class="current-month month-name">'.$month_items['month_navigation']['current_month_name_full'].' '.$month_items['month_navigation']['current_month_year_buddhist_era_full'].'</td>'."\n";
+                    $output .= '              <td class="current-month month-name">'.$month_items['month_navigation']['current_month_name_full'].' '.($this->use_buddhist_era === true ? $month_items['month_navigation']['current_month_year_buddhist_era_full'] : $month_items['month_navigation']['current_month_year_full']).'</td>'."\n";
                     $output .= '            </tr>'."\n";
                     $output .= '          </tbody>'."\n";
                     $output .= '        </table>'."\n";
