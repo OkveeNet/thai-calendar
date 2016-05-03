@@ -130,4 +130,21 @@ $Calendar->buddhist_era_offset = 543;
 $Calendar->buddhist_era_offset_short = 43;// 2016 = 2559, 16 = 59.
 ```
 
+## Screenshots
+### Scope day calendar
+[![Day calendar](http://i.imgur.com/uqmd4li.jpg "Day calendar")][ss1]
+
+### Scope week calendar
+[![Week calendar](http://i.imgur.com/NPe0fKq.jpg "Week calendar")][ss2]
+
+### Scope month calendar
+[![Month calendar](http://i.imgur.com/mOpEQ1j.jpg "Month calendar")][ss3]
+
+### Scope year calendar
+[![Year calendar](http://i.imgur.com/fjUGqMz.jpg "Year calendar")][ss4]
+
 [1]: http://php.net/manual/en/function.setlocale.php
+[ss1]: http://imgur.com/uqmd4li
+[ss2]: http://imgur.com/NPe0fKq
+[ss3]: http://imgur.com/mOpEQ1j
+[ss4]: http://imgur.com/fjUGqMz
