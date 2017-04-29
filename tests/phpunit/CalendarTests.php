@@ -3,7 +3,7 @@
 
 namespace Rundiz\Calendar\Tests;
 
-class CalendarTests extends \PHPUnit_Framework_TestCase
+class CalendarTests extends \PHPUnit\Framework\TestCase
 {
 
 
@@ -14,9 +14,9 @@ class CalendarTests extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->Calendar = new \Rundiz\Calendar\Calendar();
-        $this->Calendar->viewing_date = date('Y-m-d');
+        $this->Calendar->viewing_date = '2016-04-27';
 
-        $date = new \DateTime(date('Y-m-d'));
+        $date = new \DateTime('2016-04-27');
         $date->add(new \DateInterval('P1D'));
         $tomorrow = $date->format('Y-m-d');
         $date->add(new \DateInterval('P1D'));
@@ -25,42 +25,42 @@ class CalendarTests extends \PHPUnit_Framework_TestCase
 
         $this->events = array(
             array(
-                'date_from' => date('Y-m-d 00:00:00'),
-                'date_to' => date('Y-m-d 00:30:00'),
+                'date_from' => date('Y-m-d 00:00:00', '1461690000'),
+                'date_to' => date('Y-m-d 00:30:00', '1461690000'),
                 'title' => 'Event from 00:00 to 00:30',
             ),
             array(
-                'date_from' => date('Y-m-d 00:30:00'),
-                'date_to' => date('Y-m-d 01:00:00'),
+                'date_from' => date('Y-m-d 00:30:00', '1461690000'),
+                'date_to' => date('Y-m-d 01:00:00', '1461690000'),
                 'title' => 'Event from 00:30 to 01:00',
             ),
             array(
-                'date_from' => date('Y-m-d 00:00:00'),
-                'date_to' => date('Y-m-d 00:45:00'),
+                'date_from' => date('Y-m-d 00:00:00', '1461690000'),
+                'date_to' => date('Y-m-d 00:45:00', '1461690000'),
                 'title' => 'Event from 00:00 to 00:45',
             ),
             array(
-                'date_from' => date('Y-m-d 00:20:00'),
-                'date_to' => date('Y-m-d 00:50:00'),
+                'date_from' => date('Y-m-d 00:20:00', '1461690000'),
+                'date_to' => date('Y-m-d 00:50:00', '1461690000'),
                 'title' => 'Event from 00:20 to 00:50',
             ),
             array(
-                'date_from' => date('Y-m-d 11:10:00'),
-                'date_to' => date('Y-m-d 12:30:00'),
+                'date_from' => date('Y-m-d 11:10:00', '1461690000'),
+                'date_to' => date('Y-m-d 12:30:00', '1461690000'),
                 'title' => 'Event from 11:10 to 12:30',
             ),
             array(
-                'date_from' => date('Y-m-d 13:30:00'),
-                'date_to' => date('Y-m-d 14:00:00'),
+                'date_from' => date('Y-m-d 13:30:00', '1461690000'),
+                'date_to' => date('Y-m-d 14:00:00', '1461690000'),
                 'title' => 'Event from 13:30 to 14:00',
             ),
             array(
-                'date_from' => date('Y-m-d 13:30:00'),
-                'date_to' => date('Y-m-d 14:00:00'),
+                'date_from' => date('Y-m-d 13:30:00', '1461690000'),
+                'date_to' => date('Y-m-d 14:00:00', '1461690000'),
                 'title' => 'Event 2 (duplicated) from 13:30 to 14:00',
             ),
             array(
-                'date_from' => date('Y-m-d 23:30:00'),
+                'date_from' => date('Y-m-d 23:30:00', '1461690000'),
                 'date_to' => $tomorrow.' 00:00:00',
                 'title' => 'Event from 23:30 to 00:00 tomorrow',
             ),
@@ -111,9 +111,9 @@ class CalendarTests extends \PHPUnit_Framework_TestCase
     public function testCalendarScopeMonth()
     {
         $this->assertEquals(2, count($this->Calendar->getCalendarData('month')));
-        $this->assertEquals(156, count($this->Calendar->getCalendarData('month'), COUNT_RECURSIVE));
+        $this->assertEquals(157, count($this->Calendar->getCalendarData('month'), COUNT_RECURSIVE));
         $this->Calendar->setEvents($this->events);
-        $this->assertEquals(200, count($this->Calendar->getCalendarData('month'), COUNT_RECURSIVE));
+        $this->assertEquals(201, count($this->Calendar->getCalendarData('month'), COUNT_RECURSIVE));
         $this->Calendar->setEvents(array());
     }// testCalendarScopeMonth
 

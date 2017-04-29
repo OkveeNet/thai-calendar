@@ -3,7 +3,7 @@
 
 namespace Rundiz\Calendar\Tests;
 
-class CalendarWeeksInMonthTests extends \PHPUnit_Framework_TestCase
+class CalendarWeeksInMonthTests extends \PHPUnit\Framework\TestCase
 {
 
 
